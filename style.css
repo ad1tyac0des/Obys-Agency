@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Plain;
+    color: #fff;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#preloader{
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: #0b0b0b; 
+    position: fixed;
+    padding: 20vh 13vw 4vw 6.5vw;
+}
+
+#preloader .line{
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    /* border: 2px solid red; */
+    gap: .7vw;
+}
+
+#progress{
+    width: 27%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: .9vw;
+    /* border: 2px solid green; */
+}
+
+
+#progress h5, #progress h6{
+    font-size: 3vw;
+    line-height: 5vw;
+    font-family: "Silk Serif";
+    font-weight: 400;
+    width: 50%;
+}
+
+#progress h5{
+    text-align: right;
+}
+
+.line h1{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 7vw;
+    line-height: 7.1vw;
+    letter-spacing: -1px;
+}
+
+.line h1 span{
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: "Silk Serif";
+    font-weight: 500;
+    font-size: 7vw;
+    line-height: 7.1vw;
+    letter-spacing: -1px;
+    padding-left: .9vw;
+}
+
+main{
+    position: relative;
+}
+
+#page1{
+    width: 100%;
+    height: 100vh;
+    background-color: #111;
+}
