@@ -156,7 +156,44 @@ main{
 #page1{
     width: 100%;
     height: 100vh;
-    background-color: #464646;
+    background-color: #151515;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: rgb(3, 108, 69); */
+    padding: 0 3vw;
+    height: 7vw;
+}
+
+nav #nav-icon{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    width: fit-content;
+    height: 3.4vw;
+}
+
+#nav-icon #menu{
+    width: 3.4vw;
+    height: 100%;
+    align-content: center;
+    text-align: center;
+}
+
+nav #nav-part2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.3vw;
+}
+
+#nav-part2 h4 a{
+    font-weight: 500;
+    font-size: .85vw;
+    text-decoration: none;
 }
 
 #page2{
