@@ -12,6 +12,16 @@ body {
     height: 100%;
 }
 
+/* Cursor */
+#cursor{
+    width: 2.3vw;
+    height: 2.3vw;
+    border-radius: 50%;
+    border: 1px solid #ffffffab;
+    z-index: 99999;
+    position: fixed;
+}
+
 /* Preloader Starts */
 #preloader{
     width: 100%;
@@ -146,11 +156,11 @@ main{
 #page1{
     width: 100%;
     height: 100vh;
-    background-color: #e9cfcf;
+    background-color: #464646;
 }
 
 #page2{
     width: 100%;
     height: 100vh;
-    background-color: #c27272;
+    background-color: #4e4c4c;
 }

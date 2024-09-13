@@ -79,6 +79,19 @@ function preloaderAnimations() {
     })
 }
 
+function cursor(){
+    document.documentElement.style.cursor = "none" // Removes default cursor
 
+    document.addEventListener("mousemove", function(dets){
+        gsap.to("#cursor", {
+            x: dets.clientX,
+            y: dets.clientY,
+            transform: `translate(-50%, -50%)`,
+            ease: "expo.out"
+        })
+    })
+}
+
+cursor()
 progressCounter()
 preloaderAnimations()
