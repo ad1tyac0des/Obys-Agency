@@ -389,6 +389,43 @@ nav #nav-part2{
 
 #page5{
     width: 100%;
-    height: 100vh;
-    background-color: gray;
+    min-height: 100vh;
+    background-color: #151515;
+}
+
+.marquee-text{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.marquee-text h1{
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px #ffffffb6;
+    color: transparent;
+    font-weight: 400;
+    font-size: 7vw;
+    line-height: 7.5vw;
+    display: inline-block;
+    margin-right: 26px;
+    animation: move-text 18s linear infinite;
+}
+
+.marquee-text h1 span{
+    font-family: "Silk Serif";
+    color: transparent;
+}
+
+.marquee-text2 h1{
+    animation-direction: reverse;
+}
+
+@keyframes move-text {
+    0% {
+        transform: translate(0%);
+    }
+
+    100%{
+        transform: translate(calc(-100% - 30px));
+    }
 }
