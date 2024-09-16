@@ -207,7 +207,17 @@ nav #nav-part2{
 #hero-content{
     /* background-color: red; */
     width: 100%;
-    padding: 6.5vw 0 0 26.5vw;
+    margin: 6.5vw 0 0 26.5vw;
+    position: relative;
+}
+
+#hero-content::before{
+    content: "01";
+    position: absolute;
+    top: -1%;
+    left: -8%;
+    font-family: "Silk Serif";
+    font-size: 3.3vw;
 }
 
 #hero-content .hero-text{
