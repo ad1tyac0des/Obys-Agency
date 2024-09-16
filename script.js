@@ -144,7 +144,29 @@ function magnetEffect() {
     });
 }
 
+function textSwipe(){
+    let frames = document.querySelectorAll(".frame")
+
+    frames.forEach(function(frame){
+        frame.addEventListener("mousemove", function(){
+            gsap.to(frame.children, {
+                y: "-1.6vw",
+                duration: .55,
+            })
+        })
+
+        frame.addEventListener("mouseleave", function(){
+            gsap.to(frame.children, {
+                y: 0,
+                duration: .55,
+            })
+        })
+
+    })
+}
+
 cursor()
 progressCounter()
 preloaderAnimations()
 magnetEffect()
+textSwipe()
