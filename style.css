@@ -12,6 +12,11 @@ body {
     height: 100%;
 }
 
+/* Removed the ScrollBar */
+::-webkit-scrollbar{
+    display: none;
+}
+
 /* Cursor */
 #cursor{
     pointer-events: none;
@@ -20,7 +25,8 @@ body {
     border-radius: 50%;
     border: 1px solid #ffffffab;
     z-index: 99999;
-    position: fixed;
+    position: absolute;
+    transform: translate(-50%, -50%) ;
 }
 
 /* Preloader Starts */
@@ -31,10 +37,6 @@ body {
     background-color: #0b0b0b; 
     position: fixed;
     padding: 20vh 13vw 4vw 6.5vw;
-}
-
-::-webkit-scrollbar{
-    display: none;
 }
 
 #preloader .line{
@@ -188,7 +190,11 @@ nav #nav-part2{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2.3vw;
+    gap: .4vw;
+}
+
+#nav-part2 h4{
+    padding: 1.5vw 1vw;
 }
 
 #nav-part2 h4 a{
@@ -206,6 +212,7 @@ nav #nav-part2{
 
 #hero-content .hero-text{
     width: fit-content;
+    overflow: hidden;
     /* border: 2px solid blue; */
 }
 
@@ -221,9 +228,17 @@ nav #nav-part2{
 }
 
 .hero-text h1 span{
+    color: #fff;
     text-decoration: underline;
     text-decoration-thickness: .55vw;
     text-underline-offset: .7vw;
+    transition: all .45s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.text3 h1 span:hover{
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    text-decoration: none;
 }
 
 #page2{

@@ -69,39 +69,82 @@ function preloaderAnimations() {
 
     gsap.to("#preloader", {
         y: -1600,
-        duration: 1,
-        delay: 4.3,
+        duration: 1.45,
+        delay: 4.5,
     })
 
     gsap.to("#preloader", {
         display: "none",
-        delay: 4.4
+        delay: 4.65
+    })
+
+    gsap.from(".hero-text h1", {
+        y: 150,
+        duration: .6,
+        stagger: .25,
+        delay: 4.35,
+    })
+
+    gsap.to(".hero-text", {
+        overflow: "visible",
+        delay: 5.7
     })
 }
 
-function cursor(){
+function cursor() {
     document.documentElement.style.cursor = "none" // Removes default cursor
 
     document.addEventListener("mousemove", function (dets) {
         gsap.to("#cursor", {
             x: dets.clientX,
             y: dets.clientY,
-            transform: `translate(-50%, -50%)`,
             ease: "expo.out"
         })
     })
+
+    cursorAnimation()
+}
+
+function cursorAnimation() {
+    function scaleCursorOnHover(elem) {
+        const elements = document.querySelectorAll(elem)
+        elements.forEach(element => {
+            element.addEventListener("mousemove", function () {
+                // console.debug("hovered cursor")
+                gsap.to("#cursor", {
+                    scale: 1.4,
+                    duration: .3,
+                    ease: "sine"
+                })
+            })
+    
+            element.addEventListener("mouseleave", function () {
+                gsap.to("#cursor", {
+                    scale: 1,
+                    duration: .3,
+                    ease: "sine"
+                })
+            })
+        });
+    }
+
+    scaleCursorOnHover("#menu")
+    scaleCursorOnHover("#nav-part2 h4")
+}
+
+function magnetEffect() {
+    Shery.makeMagnet("#menu", {
+        ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+        duration: .4,
+    });
+    
+    Shery.makeMagnet("#nav-part2 h4", {
+        ease: "sine",
+        duration: .3,
+    });
 }
 
 cursor()
 progressCounter()
 preloaderAnimations()
-
-Shery.makeMagnet("#menu", {
-    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-    duration: .4,
-});
-
-Shery.makeMagnet("#nav-part2 h4", {
-    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-    duration: .4,
-});
+magnetEffect()
