@@ -1,3 +1,23 @@
+function locoScroll() {
+    gsap.registerPlugin(ScrollTrigger);
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector(".data-scroll-container"),
+        smooth: true
+    });
+    locoScroll.on("scroll", ScrollTrigger.update);
+    ScrollTrigger.scrollerProxy(".data-scroll-container", {
+        scrollTop(value) {
+            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+        },
+        pinType: document.querySelector(".data-scroll-container").style.transform ? "transform" : "fixed"
+    });
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    ScrollTrigger.refresh();
+}
+
 function progressCounter() {
     const progressCount = document.querySelector("#progress h5")
     let count = 0;
@@ -117,7 +137,7 @@ function cursorAnimation() {
                     ease: "sine"
                 })
             })
-    
+
             element.addEventListener("mouseleave", function () {
                 gsap.to("#cursor", {
                     scale: 1,
@@ -137,25 +157,25 @@ function magnetEffect() {
         ease: "cubic-bezier(0.23, 1, 0.320, 1)",
         duration: .4,
     });
-    
+
     Shery.makeMagnet("#nav-part2 h4", {
         ease: "sine",
         duration: .3,
     });
 }
 
-function textSwipe(){
+function textSwipeEffect() {
     let frames = document.querySelectorAll(".frame")
 
-    frames.forEach(function(frame){
-        frame.addEventListener("mousemove", function(){
+    frames.forEach(function (frame) {
+        frame.addEventListener("mousemove", function () {
             gsap.to(frame.children, {
                 y: "-1.6vw",
                 duration: .55,
             })
         })
 
-        frame.addEventListener("mouseleave", function(){
+        frame.addEventListener("mouseleave", function () {
             gsap.to(frame.children, {
                 y: 0,
                 duration: .55,
@@ -165,8 +185,9 @@ function textSwipe(){
     })
 }
 
+locoScroll()
 cursor()
 progressCounter()
 preloaderAnimations()
 magnetEffect()
-textSwipe()
+textSwipeEffect()

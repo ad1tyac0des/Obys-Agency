@@ -442,11 +442,11 @@ nav #nav-part2{
 
 @keyframes move-text {
     0% {
-        transform: translate(0%);
+        transform: translateX(0%);
     }
 
     100%{
-        transform: translate(calc(-100% - 30px));
+        transform: translateX(calc(-100% - 30px));
     }
 }
 
