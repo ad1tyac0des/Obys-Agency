@@ -12,6 +12,12 @@ body {
     height: 100%;
 }
 
+/* Shery JS Canvas */
+._canvas_container{
+    z-index: 999 !important;
+    pointer-events: none;
+}
+
 /* Removed the ScrollBar */
 ::-webkit-scrollbar{
     display: none;
@@ -151,6 +157,10 @@ body {
 /* Preloader Ends */
 
 /* Main Code Starts */
+.data-scroll-container{
+    height: fit-content;
+}
+
 main{
     position: relative;
     background-color: rgb(255, 112, 45);   
@@ -305,6 +315,8 @@ nav #nav-part2{
     width: 100%;
     min-height: 100vh;
     background-color: #151515;
+    /* background-color: red; */
+    padding-bottom: 13vw;
 }
 
 #page3-heading{
@@ -337,51 +349,51 @@ nav #nav-part2{
     height: 100%;
     margin: 0 auto;
     display: flex;
-    background-color: lightblue;
+    /* background-color: lightpink; */
 }
 
 /* Project Item Dimensions */
 .project-small{
     width: 23vw;
     height: 36vw;
-    background-color: lightblue;
+    /* background-color: lightblue; */
 }
 
 .project-large{
-    width: 35vw;
-    height: 48vw;
-    background-color: lightcoral;
+    width: 33vw;
+    height: 50vw;
+    /* background-color: lightcoral; */
 }
 
 /* Project Small Inside Dimensions */
 .project-small .project-header{
     height: 15%;
-    background-color: rgb(230, 142, 142);
+    /* background-color: blue; */
 }
 
 .project-small .project-image{
-    height: 70%;
-    background-color: yellow;
+    height: 72%;
+    /* background-color: yellow; */
 }
 
 .project-small .project-info{
-    height: 15%;
-    background-color: blue;
+    height: 13%;
+    /* background-color: blue; */
 }
 
 /* Project Large Inside Dimensions */
 .project-large .project-header{
-    height: 11.2%;
-    background-color: blue;
+    height: 10.8%;
+    /* background-color: blue; */
 }
 
 .project-large .project-image{
-    height: calc(100% - (11.2% + 10%));
+    height: calc(100% - (10.8% + 10%));
 }
 
 .project-large .project-info{
     height: 10%;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 /* Project (Common) Styling */
@@ -390,9 +402,23 @@ nav #nav-part2{
 }
 
 .project-item .project-header h2{
+    height: fit-content;
     text-transform: uppercase;
+    font-weight: 500;
     font-size: 2vw;
-    font-weight: 600;
+    line-height: 2.1vw;
+}
+
+.project-header .header-frame{
+    width: fit-content;
+    height: 2.1vw;
+    overflow: hidden;
+}
+
+.project-item .project-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .project-item .project-info{
