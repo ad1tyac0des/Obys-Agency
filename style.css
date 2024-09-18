@@ -163,8 +163,8 @@ body {
 
 main{
     position: relative;
-    background-color: rgb(255, 112, 45);   
-    /* background-color: #151515; */
+    /* background-color: rgb(255, 112, 45);    */
+    background-color: #151515;
 }
 
 #page1{
