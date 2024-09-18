@@ -317,6 +317,7 @@ nav #nav-part2{
     background-color: #151515;
     /* background-color: red; */
     padding-bottom: 13vw;
+    position: relative;
 }
 
 #page3-heading{
@@ -349,50 +350,51 @@ nav #nav-part2{
     height: 100%;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     /* background-color: lightpink; */
 }
 
 /* Project Item Dimensions */
 .project-small{
     width: 23vw;
-    height: 36vw;
+    height: 38vw;
     /* background-color: lightblue; */
 }
 
 .project-large{
     width: 33vw;
-    height: 50vw;
+    height: 53vw;
     /* background-color: lightcoral; */
 }
 
 /* Project Small Inside Dimensions */
 .project-small .project-header{
-    height: 15%;
+    height: 13%;
     /* background-color: blue; */
 }
 
 .project-small .project-image{
-    height: 72%;
+    height: 75%;
     /* background-color: yellow; */
 }
 
 .project-small .project-info{
-    height: 13%;
+    height: 12%;
     /* background-color: blue; */
 }
 
 /* Project Large Inside Dimensions */
 .project-large .project-header{
-    height: 10.8%;
+    height: 9.3%;
     /* background-color: blue; */
 }
 
 .project-large .project-image{
-    height: calc(100% - (10.8% + 10%));
+    height: calc(100% - (9.3% + 9%));
 }
 
 .project-large .project-info{
-    height: 10%;
+    height: 9%;
     /* background-color: blue; */
 }
 
@@ -442,15 +444,29 @@ nav #nav-part2{
     margin-right: 1.5vw;
 }
 
-/* Circle Styling */
+.project-three{
+    margin: 7vw 2vw 0 2vw;
+}
+
+.project-four{
+    margin-top: -.5vw;
+}
+
+.project-five{
+    margin-top: -9.5vw;
+}
+
+.project-six{
+    margin-top: 10vw;
+}
+
+/* Circle1 (Common) Styling */
 .interactive-circle{
     width: 22vw;
     height: 22vw;
     border: 1px solid #fff;
     border-radius: 50%;
     position: relative;
-    margin-top: 28vw;
-    margin-left: 12.5vw;
 }
 
 .circle-icon{
@@ -494,6 +510,71 @@ nav #nav-part2{
 .circle-message:hover p{
     opacity: 1;
     scale: 1;
+}
+
+/* Circle1 (Unique) Styling */
+.circle-one{
+    margin-top: 28vw;
+    margin-left: 12.5vw;
+}
+
+.circle-two{
+    margin-top: 2.5vw;
+    margin-left: 0;
+}
+
+.circle-three{
+    margin-top: 41vw;
+    margin-left: 12.5vw;
+    margin-right: 1.5vw;
+}
+
+.circle-two svg{
+    rotate: -45deg;
+}
+
+.circle-two .circle-message p{
+    text-align: center;
+}
+
+.circle-three svg{
+    rotate: -90deg;
+}
+
+.circle-three .circle-message p{
+    text-align: center;
+}
+
+/* Circle 2 Styling */
+.interactive-circle2{
+    margin-top: 10vw;
+    margin-left: 35.5vw;
+    width: 22vw;
+    height: 22vw;
+    border-radius: 50%;
+    background-color: #FFA63D;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+}
+
+.interactive-circle2 p{
+    font-size: .9vw;
+    font-weight: 300;
+    transition: all .3s ease;
+}
+
+.interactive-circle2 p span{
+    font-family: "silk serif";
+}
+
+.interactive-circle2:hover{
+    scale: .9;
+}
+
+.interactive-circle2:hover p{
+    scale: .92;
 }
 
 /* White Underline */
