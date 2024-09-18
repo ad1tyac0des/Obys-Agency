@@ -164,6 +164,60 @@ function magnetEffect() {
     });
 }
 
+function videoCursorHandler(){
+    const videoContainer = document.querySelector("#video-container")
+    const videoCursor = document.querySelector("#video-cursor")
+    const video = document.querySelector("#video-container video")
+
+    videoContainer.addEventListener("mousemove", function(dets){
+        const videoDims = videoContainer.getBoundingClientRect()
+        const x = dets.x - videoDims.x
+        const y = dets.y - videoDims.y 
+
+        gsap.to("#cursor", {
+            opacity: 0,
+        })
+
+        gsap.to("#video-cursor", {
+            top: y-50,
+            left: x-50,
+            ease: "expo.out"
+        })
+    })
+
+    videoContainer.addEventListener("mouseleave", function(dets){
+        gsap.to("#cursor", {
+            opacity: 1,
+        })
+
+        gsap.to("#video-cursor", {
+            top: "-10%",
+            left: "69%",
+            ease: "expo.out"
+        })
+    })
+
+    // Play, Pause Video
+    let isPaused = true;
+    videoContainer.addEventListener("click", function(){
+        if (isPaused){
+            videoCursor.innerHTML = `<i class="ri-pause-fill"></i>`
+            videoCursor.style.scale = .5
+            video.play()
+            video.style.opacity = 1
+
+            isPaused = false;
+        }else{
+            videoCursor.innerHTML = `<i class="ri-play-fill"></i>`
+            videoCursor.style.scale = 1
+            video.pause()
+            video.style.opacity = 0
+
+            isPaused = true;
+        }
+    })   
+}
+
 function textSwipeEffect(textContainer, swipeOffsetY, swipeDuration, hoverElementSelector = null) {
     let frames = document.querySelectorAll(textContainer)
 
@@ -200,6 +254,7 @@ cursor()
 progressCounter()
 preloaderAnimations()
 magnetEffect()
+videoCursorHandler()
 textSwipeEffect(".frame", "-1.6vw", 0.55)
 textSwipeEffect(".header-frame", "-2.1vw", 0.45, ".project-item")
 gooeyEffect()

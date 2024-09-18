@@ -275,40 +275,36 @@ nav #nav-part2{
     right: 0;
     /* border: 2px solid blue; */
     width: 70%;
-    height: 72%;
-    margin: 5.5vw 0;
+    height: 75%;
+    background: url("Assets/Images/thumbnail.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-#video-container #play-cursor {
+#video-container #video-cursor {
     position: absolute;
     top: -10%;
-    right: 17%;
-    z-index: 99;
+    left: 69%;
+    /* z-index: 99; */
     width: 9.2vw;
     height: 9.2vw;
     border-radius: 50%;
     background-color: #FFA63D;
     text-align: center;
     align-content: center;
+    transition: scale .5s ease;
 }
 
-#play-cursor i{
+#video-cursor i{
     font-size: 2vw;
-}
-
-#video-container img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 101%;
-    object-fit: cover;
 }
 
 #video-container video{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    opacity: 0;
 }
 
 #page3{
