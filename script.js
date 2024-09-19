@@ -2,7 +2,8 @@ function locoScroll() {
     gsap.registerPlugin(ScrollTrigger);
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector(".data-scroll-container"),
-        smooth: true
+        smooth: true,
+        smoothMobile: true
     });
     locoScroll.on("scroll", ScrollTrigger.update);
     ScrollTrigger.scrollerProxy(".data-scroll-container", {
@@ -351,7 +352,6 @@ function underlineAnimations() {
     let underlines = document.querySelectorAll(".underline")
     underlines.forEach(function (underline) {
         let underlineParentId = underline.parentElement.id;
-        console.log(underlineParentId)
         gsap.to(`#${underlineParentId} .underline`, {
             scaleX: 1,
             duration: 1,

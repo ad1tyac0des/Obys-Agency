@@ -313,8 +313,9 @@ nav #nav-part2{
     height: 9.2vw;
     border-radius: 50%;
     background-color: #FFA63D;
-    text-align: center;
-    align-content: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
     transition: scale .5s ease;
 }
 
