@@ -164,6 +164,37 @@ function magnetEffect() {
     });
 }
 
+function flagAnimation() {
+    const hoverContainer = document.querySelector(".text3")
+    const hoverContainerDims = hoverContainer.getBoundingClientRect()
+
+    hoverContainer.addEventListener("mousemove", function (dets) {
+        let moveX = dets.clientX - hoverContainerDims.x
+        let moveY = dets.clientY - hoverContainerDims.y
+
+        gsap.to("#flag", {
+            top:"50%",
+            x: moveX,
+            y: moveY,
+            opacity: 1,
+            ease: "circ"
+        })
+    })
+
+    hoverContainer.addEventListener("mouseleave", function (dets) {
+        let moveX = dets.clientX - hoverContainerDims.x
+        let moveY = dets.clientY - hoverContainerDims.y
+
+        gsap.to("#flag", {
+            top:"50%",
+            x: moveX,
+            y: moveY,
+            opacity: 0,
+            ease: "circ"
+        })
+    })
+}
+
 function videoCursorHandler() {
     const videoContainer = document.querySelector("#video-container")
     const videoCursor = document.querySelector("#video-cursor")
@@ -249,7 +280,6 @@ function gooeyEffect() {
     });
 }
 
-
 function textFadeEffect() {
     const string = "Let's Create"
     const textContainer = document.querySelector(".text-container")
@@ -322,6 +352,7 @@ cursor()
 progressCounter()
 preloaderAnimations()
 magnetEffect()
+flagAnimation()
 videoCursorHandler()
 textSwipeEffect(".frame", "-1.6vw", 0.55)
 textSwipeEffect(".header-frame", "-2.1vw", 0.45, ".project-item")

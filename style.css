@@ -232,6 +232,8 @@ nav #nav-part2{
 }
 
 #hero-content .hero-text{
+    position: relative;
+    z-index: 10;
     width: fit-content;
     overflow: hidden;
     /* border: 2px solid blue; */
@@ -260,6 +262,18 @@ nav #nav-part2{
     -webkit-text-stroke: 1px #fff;
     color: transparent;
     text-decoration: none;
+}
+
+#hero-content #flag{
+    width: 20vw;
+    height: 30vw;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    opacity: 0;
 }
 
 #page2{
