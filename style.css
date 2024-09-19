@@ -731,18 +731,48 @@ footer{
     margin-top: 6vw;
 }
 
-#footer-wrapper h1{
-    text-transform: uppercase;
-    font-size: 7.45vw;
-    font-weight: 500;
-    margin-bottom: 4vw;
+#footer-heading-container{
     position: relative;
+    display: flex;
 }
 
-#footer-wrapper h1::before{
+#footer-heading-container svg{
+    width: 6vw;
+    height: 7vw;
+    rotate: -90deg;
+    margin-left: 3.5vw;
+}
+
+.text-container h1{
+    font-family: "Plain";
+    text-transform: uppercase;
+    font-size: 7.4vw;
+    line-height: 7vw;
+    font-weight: 500;
+    margin-bottom: 4vw;
+}
+
+.text-container .heading2{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.heading1 span{
+    opacity: 1;
+}
+
+.heading2 span{
+    opacity: 0;
+    font-family: "Silk Serif";
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+}
+
+#footer-heading-container::before{
     content: "04";
     position: absolute;
-    top: 8%;
+    top: 0;
     left: -14%;
     font-family: "Silk Serif";
     font-size: 3.3vw;

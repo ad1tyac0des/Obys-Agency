@@ -164,28 +164,28 @@ function magnetEffect() {
     });
 }
 
-function videoCursorHandler(){
+function videoCursorHandler() {
     const videoContainer = document.querySelector("#video-container")
     const videoCursor = document.querySelector("#video-cursor")
     const video = document.querySelector("#video-container video")
 
-    videoContainer.addEventListener("mousemove", function(dets){
+    videoContainer.addEventListener("mousemove", function (dets) {
         const videoDims = videoContainer.getBoundingClientRect()
         const x = dets.x - videoDims.x
-        const y = dets.y - videoDims.y 
+        const y = dets.y - videoDims.y
 
         gsap.to("#cursor", {
             opacity: 0,
         })
 
         gsap.to("#video-cursor", {
-            top: y-50,
-            left: x-50,
+            top: y - 50,
+            left: x - 50,
             ease: "expo.out"
         })
     })
 
-    videoContainer.addEventListener("mouseleave", function(dets){
+    videoContainer.addEventListener("mouseleave", function (dets) {
         gsap.to("#cursor", {
             opacity: 1,
         })
@@ -199,15 +199,15 @@ function videoCursorHandler(){
 
     // Play, Pause Video
     let isPaused = true;
-    videoContainer.addEventListener("click", function(){
-        if (isPaused){
+    videoContainer.addEventListener("click", function () {
+        if (isPaused) {
             videoCursor.innerHTML = `<i class="ri-pause-fill"></i>`
             videoCursor.style.scale = .5
             video.play()
             video.style.opacity = 1
 
             isPaused = false;
-        }else{
+        } else {
             videoCursor.innerHTML = `<i class="ri-play-fill"></i>`
             videoCursor.style.scale = 1
             video.pause()
@@ -215,7 +215,7 @@ function videoCursorHandler(){
 
             isPaused = true;
         }
-    })   
+    })
 }
 
 function textSwipeEffect(textContainer, swipeOffsetY, swipeDuration, hoverElementSelector = null) {
@@ -245,8 +245,76 @@ function gooeyEffect() {
     Shery.imageEffect(".project-image", {
         style: 6,
         gooey: true,
-        config: {"noiseDetail":{"value":9.16,"range":[0,100]},"distortionAmount":{"value":3.74,"range":[0,10]},"scale":{"value":59.54,"range":[0,100]},"speed":{"value":0.51,"range":[0,1]},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":0.8886583026758482},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":0.5,"y":0.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":true},"infiniteGooey":{"value":false},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.37,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":true},"onMouse":{"value":0},"noise_speed":{"value":0.53,"range":[0,10]},"metaball":{"value":0.47,"range":[0,2]},"discard_threshold":{"value":0.5,"range":[0,1]},"antialias_threshold":{"value":0,"range":[0,0.1]},"noise_height":{"value":0.34,"range":[0,2]},"noise_scale":{"value":11.45,"range":[0,100]}}
+        config: { "noiseDetail": { "value": 9.16, "range": [0, 100] }, "distortionAmount": { "value": 3.74, "range": [0, 10] }, "scale": { "value": 59.54, "range": [0, 100] }, "speed": { "value": 0.51, "range": [0, 1] }, "zindex": { "value": -9996999, "range": [-9999999, 9999999] }, "aspect": { "value": 0.8886583026758482 }, "ignoreShapeAspect": { "value": true }, "shapePosition": { "value": { "x": 0, "y": 0 } }, "shapeScale": { "value": { "x": 0.5, "y": 0.5 } }, "shapeEdgeSoftness": { "value": 0, "range": [0, 0.5] }, "shapeRadius": { "value": 0, "range": [0, 2] }, "currentScroll": { "value": 0 }, "scrollLerp": { "value": 0.07 }, "gooey": { "value": true }, "infiniteGooey": { "value": false }, "growSize": { "value": 4, "range": [1, 15] }, "durationOut": { "value": 1, "range": [0.1, 5] }, "durationIn": { "value": 1.5, "range": [0.1, 5] }, "displaceAmount": { "value": 0.5 }, "masker": { "value": true }, "maskVal": { "value": 1.37, "range": [1, 5] }, "scrollType": { "value": 0 }, "geoVertex": { "range": [1, 64], "value": 1 }, "noEffectGooey": { "value": true }, "onMouse": { "value": 0 }, "noise_speed": { "value": 0.53, "range": [0, 10] }, "metaball": { "value": 0.47, "range": [0, 2] }, "discard_threshold": { "value": 0.5, "range": [0, 1] }, "antialias_threshold": { "value": 0, "range": [0, 0.1] }, "noise_height": { "value": 0.34, "range": [0, 2] }, "noise_scale": { "value": 11.45, "range": [0, 100] } }
     });
+}
+
+
+function textFadeEffect() {
+    const string = "Let's Create"
+    const textContainer = document.querySelector(".text-container")
+    const headings = document.querySelectorAll(".text-container h1")
+    let hoverTimer;
+    let isHovering = false;
+
+    headings.forEach(function (heading) {
+        for (let i = 0; i < string.length; i++) {
+            const span = document.createElement("span")
+            span.textContent = string[i]
+            heading.appendChild(span)
+        }
+    })
+
+    textContainer.addEventListener("mouseenter", function () {
+        isHovering = true;
+        hoverTimer = setTimeout(() => {
+            if (isHovering) {
+                gsap.to(".heading1 span", {
+                    opacity: 0,
+                    duration: .2,
+                    stagger: .05
+                })
+
+                gsap.to(".heading2 span", {
+                    opacity: 1,
+                    duration: .2,
+                    stagger: .05,
+                    delay: .2
+                })
+
+                gsap.to(".arrow", {
+                    x: 100,
+                    duration: .4,
+                    ease: "circ"
+                })
+            }
+        }, 300); // Hover atleast for 300ms to trigger the animation
+    })
+
+    textContainer.addEventListener("mouseleave", function () {
+        isHovering = false;
+        clearTimeout(hoverTimer);
+
+        gsap.to(".heading2 span", {
+            opacity: 0,
+            duration: .3,
+            stagger: .05,
+        })
+
+        gsap.to(".heading1 span", {
+            opacity: 1,
+            duration: .3,
+            stagger: .05,
+            delay: .3
+        })
+
+        gsap.to(".arrow", {
+            x: 20,
+            duration: .4,
+            ease: "circ",
+            delay: .5
+        })
+    })
 }
 
 locoScroll()
@@ -258,3 +326,4 @@ videoCursorHandler()
 textSwipeEffect(".frame", "-1.6vw", 0.55)
 textSwipeEffect(".header-frame", "-2.1vw", 0.45, ".project-item")
 gooeyEffect()
+textFadeEffect()
