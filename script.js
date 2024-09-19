@@ -173,7 +173,7 @@ function flagAnimation() {
         let moveY = dets.clientY - hoverContainerDims.y
 
         gsap.to("#flag", {
-            top:"50%",
+            top: "50%",
             x: moveX,
             y: moveY,
             opacity: 1,
@@ -186,7 +186,7 @@ function flagAnimation() {
         let moveY = dets.clientY - hoverContainerDims.y
 
         gsap.to("#flag", {
-            top:"50%",
+            top: "50%",
             x: moveX,
             y: moveY,
             opacity: 0,
@@ -318,7 +318,7 @@ function textFadeEffect() {
                     ease: "circ"
                 })
             }
-        }, 300); // Hover atleast for 300ms to trigger the animation
+        }, 500); // Hover atleast for 500ms to trigger the animation
     })
 
     textContainer.addEventListener("mouseleave", function () {
@@ -347,10 +347,46 @@ function textFadeEffect() {
     })
 }
 
+function underlineAnimations() {
+    let underlines = document.querySelectorAll(".underline")
+    underlines.forEach(function (underline) {
+        let underlineParentId = underline.parentElement.id;
+        console.log(underlineParentId)
+        gsap.to(`#${underlineParentId} .underline`, {
+            scaleX: 1,
+            duration: 1,
+            ease: "circ",
+            stagger: .3,
+            scrollTrigger: {
+                trigger: `#${underlineParentId}`,
+                scroller: ".data-scroll-container",
+                start: "top 70%",
+                // markers: true,
+            }
+        })
+    })
+
+    let projectItems = document.querySelectorAll(".project-item")
+    projectItems.forEach(projectItem => {
+        gsap.to(projectItem, {
+            onStart: () => {
+                projectItem.classList.add("animate-image-underline")
+            },
+            scrollTrigger: {
+                trigger: projectItem,
+                scroller: ".data-scroll-container",
+                start: "25% 20%",
+                // markers: true
+            }
+        })
+    })
+}
+
 locoScroll()
 cursor()
 progressCounter()
 preloaderAnimations()
+underlineAnimations()
 magnetEffect()
 flagAnimation()
 videoCursorHandler()

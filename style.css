@@ -23,6 +23,15 @@ body {
     display: none;
 }
 
+/* White Underline */
+.underline{
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
 /* Cursor */
 #cursor{
     pointer-events: none;
@@ -409,8 +418,27 @@ nav #nav-part2{
 }
 
 /* Project (Common) Styling */
-.project-item{
-    border-bottom: 1px solid #fff;
+
+/* Below first three are for Underline Animation in bottom of Images */
+.project-item {
+    position: relative;
+}
+
+.project-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px; 
+    background-color: #fff;
+    transform-origin: right;
+    transform: scaleX(0); 
+    transition: transform .5s ease; 
+}
+
+.project-item.animate-image-underline::after{
+    transform: scaleX(1);
 }
 
 .project-item .project-header h2{
@@ -585,13 +613,6 @@ nav #nav-part2{
 
 .interactive-circle2:hover p{
     scale: .92;
-}
-
-/* White Underline */
-.underline{
-    width: 100%;
-    height: 1px;
-    background-color: #fff;
 }
 
 #page4{
