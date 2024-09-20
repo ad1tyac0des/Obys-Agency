@@ -395,12 +395,33 @@ textFadeEffect()
 
 
 // Run fncs on desktop only
-function runOnDesktop(){
-    if (window.innerWidth > 768){
+function runOnDesktop() {
+    if (window.innerWidth > 768) {
         magnetEffect()
         gooeyEffect()
-    }else{
-        console.log("Desktop Specific Code Not Running!")
+    } else {
+        console.info("Desktop Specific Code Not Running!")
     }
 }
 runOnDesktop()
+
+
+// this fn removes 2nd image from each project item, its only used for (mobile devices)
+function removeImages() {
+    let projectImages = document.querySelectorAll(".project-image img")
+    projectImages.forEach((projectImage, index) => {
+        if (index % 2 !== 0) {
+            projectImage.style.display = "none"
+        }
+    })
+}
+
+// Run fncs on mobile only
+function runOnMobile() {
+    if (window.innerWidth <= 768) {
+        removeImages()
+    } else{
+        console.info("Mobile Specific Code Not Running!")
+    }
+}
+runOnMobile()
