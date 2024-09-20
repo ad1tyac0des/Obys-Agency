@@ -386,11 +386,11 @@ locoScroll()
 cursor()
 progressCounter()
 preloaderAnimations()
-underlineAnimations()
+underlineAnimations() 
 flagAnimation()
 videoCursorHandler()
-textSwipeEffect(".frame", "-1.6vw", 0.55)
 textSwipeEffect(".header-frame", "-2.1vw", 0.45, ".project-item")
+textSwipeEffect(".frame", "-1.6vw", 0.55)
 textFadeEffect()
 
 
@@ -420,6 +420,7 @@ function removeImages() {
 function runOnMobile() {
     if (window.innerWidth <= 768) {
         removeImages()
+        textSwipeEffect(".header-frame", "-6.7vw", 0.45, ".project-item")
     } else{
         console.info("Mobile Specific Code Not Running!")
     }
