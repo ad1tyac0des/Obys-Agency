@@ -317,11 +317,19 @@ function textFadeEffect() {
                     delay: .2
                 })
 
-                gsap.to(".arrow", {
-                    x: 100,
-                    duration: .4,
-                    ease: "circ"
-                })
+                if (window.innerWidth <= 768) {
+                    gsap.to(".arrow", {
+                        x: 40,
+                        duration: .4,
+                        ease: "circ"
+                    })
+                } else {
+                    gsap.to(".arrow", {
+                        x: 100,
+                        duration: .4,
+                        ease: "circ"
+                    })
+                }
             }
         }, 500); // Hover atleast for 500ms to trigger the animation
     })
@@ -343,12 +351,21 @@ function textFadeEffect() {
             delay: .3
         })
 
-        gsap.to(".arrow", {
-            x: 20,
-            duration: .4,
-            ease: "circ",
-            delay: .5
-        })
+        if (window.innerWidth <= 768) {
+            gsap.to(".arrow", {
+                x: 10,
+                duration: .4,
+                ease: "circ",
+                delay: .5
+            })
+        } else {
+            gsap.to(".arrow", {
+                x: 20,
+                duration: .4,
+                ease: "circ",
+                delay: .5
+            })
+        }
     })
 }
 
