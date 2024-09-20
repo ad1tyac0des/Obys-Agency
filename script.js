@@ -421,6 +421,7 @@ function runOnMobile() {
     if (window.innerWidth <= 768) {
         removeImages()
         textSwipeEffect(".header-frame", "-6.7vw", 0.45, ".project-item")
+        textSwipeEffect(".frame", "-6.5vw", 0.55)
     } else{
         console.info("Mobile Specific Code Not Running!")
     }
