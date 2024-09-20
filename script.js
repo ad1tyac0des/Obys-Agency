@@ -387,10 +387,20 @@ cursor()
 progressCounter()
 preloaderAnimations()
 underlineAnimations()
-magnetEffect()
 flagAnimation()
 videoCursorHandler()
 textSwipeEffect(".frame", "-1.6vw", 0.55)
 textSwipeEffect(".header-frame", "-2.1vw", 0.45, ".project-item")
-gooeyEffect()
 textFadeEffect()
+
+
+// Run fncs on desktop only
+function runOnDesktop(){
+    if (window.innerWidth > 768){
+        magnetEffect()
+        gooeyEffect()
+    }else{
+        console.log("Desktop Specific Code Not Running!")
+    }
+}
+runOnDesktop()
