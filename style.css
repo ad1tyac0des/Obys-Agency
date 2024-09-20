@@ -1199,6 +1199,10 @@ footer {
         line-height: 10.5vw;
     }
 
+    .heading2 span{
+        -webkit-text-stroke: 1px #fff;
+    }
+
     #footer-heading-container::before {
         top: -70%;
         left: 0;
