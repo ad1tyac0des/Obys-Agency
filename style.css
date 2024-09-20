@@ -316,7 +316,7 @@ nav #nav-part2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: scale .5s ease;
+    transition: scale .5s ease, opacity .5s ease;
 }
 
 #video-cursor i {

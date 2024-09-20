@@ -237,6 +237,9 @@ function videoCursorHandler() {
             videoCursor.style.scale = .5
             video.play()
             video.style.opacity = 1
+            if (window.innerWidth <= 768) {
+                videoCursor.style.opacity = 0;
+            }
 
             isPaused = false;
         } else {
@@ -244,6 +247,7 @@ function videoCursorHandler() {
             videoCursor.style.scale = 1
             video.pause()
             video.style.opacity = 0
+            videoCursor.style.opacity = 1;
 
             isPaused = true;
         }
