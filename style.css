@@ -378,35 +378,29 @@ nav #nav-part2 {
 .project-small {
     width: 23vw;
     height: 38vw;
-    /* background-color: lightblue; */
 }
 
 .project-large {
     width: 33vw;
     height: 53vw;
-    /* background-color: lightcoral; */
 }
 
 /* Project Small Inside Dimensions */
 .project-small .project-header {
     height: 13%;
-    /* background-color: blue; */
 }
 
 .project-small .project-image {
     height: 75%;
-    /* background-color: yellow; */
 }
 
 .project-small .project-info {
     height: 12%;
-    /* background-color: blue; */
 }
 
 /* Project Large Inside Dimensions */
 .project-large .project-header {
     height: 9.3%;
-    /* background-color: blue; */
 }
 
 .project-large .project-image {
@@ -415,7 +409,6 @@ nav #nav-part2 {
 
 .project-large .project-info {
     height: 9%;
-    /* background-color: blue; */
 }
 
 /* Project (Common) Styling */
@@ -683,7 +676,7 @@ nav #nav-part2 {
 
 #awards-container .award-item {
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: space-between;
     border-bottom: 2px solid #ffffff8b;
     padding: 1.8vw 0;
@@ -925,4 +918,327 @@ footer {
     }
 
     /* Preloader Ends */
+
+    /* Main Code Starts */
+
+    /* Page1 */
+    #page1 {
+        height: 60vmax;
+    }
+
+    nav {
+        padding: 0 5vw;
+        height: 20vmin;
+    }
+
+    nav #nav-icon {
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+
+    nav #nav-part2 {
+        display: none;
+    }
+
+    #hero-content {
+        width: 90%;
+        margin: 25vmin 5vmin 0 5vmin;
+    }
+
+    #hero-content::before {
+        top: -25%;
+        left: 0;
+        font-size: 5.5vw;
+    }
+
+    #hero-content .text4 {
+        margin-top: .6vw;
+    }
+
+    .hero-text h1 {
+        font-size: 10.45vmin;
+        line-height: 10.5vmin;
+    }
+
+    #hero-content #flag {
+        display: none;
+    }
+
+    /* Page2 */
+    #page2 {
+        height: 80vh;
+    }
+
+    #video-container {
+        top: 5%;
+        right: 0;
+        /* border: 2px solid blue; */
+        width: 100%;
+        height: 75%;
+    }
+
+    #video-container #video-cursor {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 22vw;
+        height: 22vw;
+    }
+
+    #video-cursor i {
+        font-size: 5vw;
+    }
+
+    /* Page3 */
+    #page3-heading {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #page3-heading h1 {
+        font-size: 10vw;
+    }
+
+    #page3-heading h1::before {
+        top: -70%;
+        left: 0;
+        font-size: 5.5vw;
+    }
+
+    #page3-heading .underline {
+        margin: 7vw 0 12vw 0;
+    }
+
+    .projects-section {
+        width: 90%;
+        flex-direction: column;
+        gap: 15vw;
+        flex-wrap: nowrap;
+    }
+
+    /* Project Item Dimensions */
+    .project-item {
+        width: 100%;
+        height: 85vh;
+    }
+
+    .project-item .project-header {
+        height: 10%;
+    }
+
+    .project-item .project-image {
+        height: 75%;
+    }
+
+    .project-item .project-info {
+        height: 15%;
+    }
+
+    /* Project (Common) Styling */
+    .project-item {
+        margin: 0;
+    }
+
+    .project-item .project-header h2 {
+        font-size: 6.6vw;
+        line-height: 6.7vw;
+    }
+
+    .project-header .header-frame {
+        height: 6.7vw;
+    }
+
+    .project-info p {
+        font-size: 4vw;
+    }
+
+    /* Circle1 Styling */
+    .interactive-circle {
+        display: none;
+    }
+
+    /* Circle 2 Styling */
+    .interactive-circle2 {
+        margin: 0vw auto 12vw auto;
+        width: 40vw;
+        height: 40vw;
+    }
+
+    .interactive-circle2 p {
+        font-size: 3.8vw;
+        font-weight: 500;
+    }
+
+    /* Page 4 */
+
+    #page4-wrapper {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #page4-heading h1 {
+        font-size: 10vw;
+    }
+
+    #page4-heading h1::before {
+        top: -70%;
+        left: 0;
+        font-size: 5.5vw;
+    }
+
+    #page4-heading .underline {
+        margin: 6vw 0 14vw 0;
+    }
+
+    #page4-content>p {
+        width: 100%;
+        font-size: 6vw;
+        line-height: 6.3vw;
+    }
+
+    #page4-content-part2 {
+        flex-direction: column-reverse;
+        gap: 14vw;
+        margin-top: 10vw;
+    }
+
+    #page4-content-part2 img {
+        width: 100%;
+        height: 60vh;
+        margin-right: 0;
+        object-position: 0 38%;
+    }
+
+    #page4-content-part2 p {
+        width: 90%;
+        font-size: 4vw;
+        line-height: 4.5vw;
+    }
+
+    #awards-container {
+        margin-top: 0;
+        margin-left: 0;
+        width: 100%;
+        padding: 4vw 5vw 15vw 5vw;
+    }
+
+    #awards-container .award-item {
+        height: 20vw;
+        justify-content: start;
+        padding: 0;
+    }
+
+    .award-item h1 {
+        width: 50%;
+        font-size: 3.9vw;
+    }
+
+    .award-item p {
+        font-size: 3.6vw;
+        width: 50%;
+    }
+
+    #page4-wrapper #page4-bottom {
+        padding-top: 20vw;
+        padding-bottom: 12vw;
+    }
+
+    #page4-bottom p {
+        font-size: 3.8vw;
+        margin-top: 6vw;
+    }
+
+    /* Page5 */
+    #page5 {
+        min-height: 0;
+        height: fit-content;
+        padding-bottom: 30vw;
+    }
+
+    .marquee-text h1 {
+        font-size: 12vw;
+        line-height: 12.5vw;
+        margin-right: 12px;
+        animation: move-text 28s linear infinite;
+    }
+
+    .marquee-text2 h1 {
+        animation-direction: reverse;
+    }
+
+    @keyframes move-text {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(calc(-100% - 16px));
+        }
+    }
+
+    /* Footer */
+    footer {
+        min-height: 95vh;
+        background-color: #151515;
+    }
+
+    #footer-wrapper {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 6vw;
+    }
+
+    #footer-heading-container svg {
+        height: 10.5vw;
+        margin-left: 4.5vw;
+    }
+
+    .text-container h1 {
+        font-size: 10vw;
+        line-height: 10.5vw;
+    }
+
+    #footer-heading-container::before {
+        top: -70%;
+        left: 0;
+        font-size: 5.5vw;
+    }
+
+    #footer-center {
+        margin: 15vw 0;
+        padding: 2vw 0;
+        flex-direction: column;
+        gap: 10vw;
+    }
+
+    #footer-center .footer-part {
+        width: 100%;
+    }
+
+    .footer-part h4 {
+        font-weight: 400;
+        font-size: 4vw;
+        margin-bottom: 6vw;
+    }
+
+    .address-container h2 {
+        font-size: 5.5vw;
+        line-height: 5.3vw;
+    }
+
+    .frame {
+        height: 6.5vw;
+    }
+
+    .frame span {
+        height: 6.5vw;
+        font-size: 5.5vw;
+        line-height: 6.5vw;
+    }
+
+    #copyright {
+        margin: 12vw 0;
+        font-size: 4vw;
+    }
 }
