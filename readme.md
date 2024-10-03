@@ -2,6 +2,8 @@
 
 This project is a frontend clone of the Obys Agency website, showcasing modern web development techniques and interactive design elements.
 
+![HomeSS](docs/home.png)
+
 ## Features
 
 - Smooth scrolling with Locomotive Scroll
